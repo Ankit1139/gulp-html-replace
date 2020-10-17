@@ -42,7 +42,7 @@ htmlreplace({js: 'js/main.js'})
 // Options is an array of strings
 htmlreplace({js: ['js/monster.js', 'js/hero.js']})
 ```
->If your options strings ends with `.js` or `.css` they will be replaced by correct script/style tags, so you don't need to specify a template like in the example below.
+>If your options strings ends with `.js` or `.css` they will be replaced by correct script/style tags, so you don't need to specify a template like given in the example below.
 
 ###### Advanced example:
 ```javascript
@@ -62,6 +62,7 @@ htmlreplace({
   }
 })
 ```
+// mutiple tag replacements are done over here 
 * **src** - `String|Array|stream.Readable` Same thing as in simple example.
 * **tpl** - `String` Template string. Uses [util.format()](http://nodejs.org/api/util.html#util_util_format_format) internally.
 
@@ -92,7 +93,7 @@ htmlreplace({
 
 > In the first example `src` is null because there are no standard replacements. `%f` is replaced with the name (without extension) of the file currently being processed. If the file being processed is `xyzzy.html` the result is `<script src="xyzzy.js"></script>`.
 
-> In the second example `src` has been set to the string `'dir'`. Extended replacements are processed first, replacing `%f` with `xyzzy`, then `%s` will be replaced with `dir` resulting in `<script src="dir/xyzzy.js"></script>`.
+> In the second example `src` has been set to the string `'dir'`. Extended replacements are processed first, replacing `%f` with `xyzzy`, then `%s` will be replaced with `dir` directly resulting in `<script src="dir/xyzzy.js"></script>`.
 
 Valid extended replacements are:
 
